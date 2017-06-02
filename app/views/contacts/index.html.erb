@@ -1,0 +1,39 @@
+<div class="panel panel-primary">
+	<table class="table">
+
+	<% @contacts.each do |contact| %>
+
+	<tr>
+		<td class="middle">
+	
+					<h3 class="media-heading"><%= contact.name %> <%= contact.surname%> 
+					         <% if contact.important? %>
+          			<span class="star">
+          				<span class="glyphicon glyphicon-star", aria-hidden="true"></span><% end %></h3>
+          			</span>
+          <p><i class="glyphicon glyphicon-phone"> <%= contact.phone %></i></p>					
+          <p><i class="glyphicon glyphicon-globe"> <%= contact.email %></i></p>	
+					<address>
+						<i><%= contact.address %></i>
+					</address>
+
+
+         <td width="200" class="middle">
+          <div>
+
+          	<%= link_to contact_path(contact), class: "btn btn-circle btn-default btn-xs", title: "Show" do %>
+          		<i class="glyphicon glyphicon-info-sign"></i>
+          	<% end %>
+            <%= link_to edit_contact_path(contact), class: "btn btn-circle btn-default btn-xs", title: "Edit" do %>
+              <i class="glyphicon glyphicon-edit"></i>
+            <% end %>
+            <%= link_to contact_path(contact), :method => :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure ?" } do %>
+              <i class="glyphicon glyphicon-trash"></i>
+            <% end %>            
+          </div>
+        </td>
+	</tr>
+	<% end %>
+	</table>
+</div>
+

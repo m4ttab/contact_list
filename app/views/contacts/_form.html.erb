@@ -1,0 +1,20 @@
+<%= simple_form_for(@contact, html: {multipart: true })  do |f| %>
+  <% if @contact.errors.any? %>
+		<h3><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h3>
+      <ul>
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+      </ul>
+   	<% end %>
+
+
+  <%= f.input :name, label: 'Name', placeholder: 'Andy' %>
+  <%= f.input :surname, label: 'Surname', placeholder: 'Bush' %>
+  <%= f.input :email, label: 'Email', placeholder: 'user@domain.com' %>
+  <%= f.input :phone, label: 'Phone', placeholder: '123456789' %>
+  <%= f.input :address, label: 'Address', placeholder: 'Cracow, Lea 12/58', as: :text %>
+  <%= f.input :important, label: 'Important contact', inline_label: 'This contact is important for me?' %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= link_to "Cancel", contacts_path, class: "btn btn-primary" %> 
+<% end %>			
