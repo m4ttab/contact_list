@@ -1,9 +1,5 @@
-// $(document).ready(function(){
-// 	$(".star").click(function(){
-// 		$(this).toggleClass("gold");
-// 	});
-// });
-// $(document).ready(function(){
-//     $("#sortable").sortable();
-//     $("#sortable").disableSelection();
-//   });
+$(document).ready(function(){
+	$(".star").click(function(){
+		$(this).toggleClass("gold");
+	});
+});

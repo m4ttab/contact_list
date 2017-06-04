@@ -1,7 +1,13 @@
-<h1> <%= @contact.name %> </h1>
-<h2> <%= @contact.surname %> </h2>
-<h2> Phone: <%= @contact.phone %> </h2>
-<h2> Email: <%= @contact.email %> </h2>
-<p> <%= @contact.address %></p>
-<p>Group: <%= @contact.group.name %></p>
-<%= link_to "Edit", edit_contact_path(@contact) %>
+<div class="panel panel-primary">
+	<div class="head">
+	<div class="medium">
+
+	<h1> <%= @contact.name %> <%= @contact.surname %> </h1>
+	<h3> <span class="glyphicon glyphicon-phone"> <%= @contact.phone %></span><br>
+	<span class="glyphicon glyphicon-globe"> <a href="mailto:"><%= @contact.email %></a></span><br>
+	<span class="glyphicon glyphicon-envelope"> <%= @contact.address %></span><br>
+	<span class="glyphicon glyphicon-user"> <%= @contact.group.name %></span class="glyphicon glyphicon-user"> </h3><br>
+	<%= link_to "Edit", edit_contact_path(@contact), class: 'btn btn-primary' %>
+	<%= link_to "Delete", contact_path(@contact), :method => :delete, class: 'btn btn-primary', data: {confirm: 'Are you sure?'} %>
+	</div>
+</div>
