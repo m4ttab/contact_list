@@ -1,5 +1,5 @@
 // $(document).ready(function(){
-// 	$(".heart").click(function(){
+// 	$(".star").click(function(){
 // 		$(this).toggleClass("gold");
 // 	});
 // });

@@ -14,6 +14,7 @@
   <%= f.input :email, label: 'Email', placeholder: 'user@domain.com' %>
   <%= f.input :phone, label: 'Phone', placeholder: '123456789' %>
   <%= f.input :address, label: 'Address', placeholder: 'Cracow, Lea 12/58', as: :text %>
+  <%= f.collection_select :group_id, Group.all, :id, :name, :prompt => "Select a group" %>
   <%= f.input :important, label: 'Important contact', inline_label: 'This contact is important for me?' %>
   <%= f.button :submit, class: "btn btn-primary" %>
   <%= link_to "Cancel", contacts_path, class: "btn btn-primary" %> 

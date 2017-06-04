@@ -7,10 +7,13 @@
 		<td class="middle">
 	
 					<h3 class="media-heading"><%= contact.name %> <%= contact.surname%> 
-					         <% if contact.important? %>
-          			<span class="star">
-          				<span class="glyphicon glyphicon-star", aria-hidden="true"></span><% end %></h3>
-          			</span>
+						<% if contact.important? %>
+            	<span class="star">
+          			<span class="glyphicon glyphicon-star", aria-hidden="true"></span>
+          		</span>	
+            <% end %>       
+          </h3>
+
           <p><i class="glyphicon glyphicon-phone"> <%= contact.phone %></i></p>					
           <p><i class="glyphicon glyphicon-globe"> <%= contact.email %></i></p>	
 					<address>

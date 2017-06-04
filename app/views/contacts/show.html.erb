@@ -1,7 +1,7 @@
 <h1> <%= @contact.name %> </h1>
 <h2> <%= @contact.surname %> </h2>
-<h2> <%= @contact.phone %> </h2>
-<h2> <%= @contact.email %> </h2>
+<h2> Phone: <%= @contact.phone %> </h2>
+<h2> Email: <%= @contact.email %> </h2>
 <p> <%= @contact.address %></p>
-
+<p>Group: <%= @contact.group.name %></p>
 <%= link_to "Edit", edit_contact_path(@contact) %>

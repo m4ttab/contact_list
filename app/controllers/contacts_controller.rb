@@ -2,7 +2,12 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   def index
-  	@contacts = Contact.all
+  	if params[:group_id]
+      @group = Group.find(params[:group_id])
+      @contacts = @group.contacts.order('surname')
+    else
+      @contacts = Contact.order('surname')
+    end
   end
 
   def new
@@ -44,7 +49,7 @@ class ContactsController < ApplicationController
 	end
 
 	def contact_params
-		params.require(:contact).permit(:name, :surname, :phone, :address, :email, :important)
+		params.require(:contact).permit(:name, :surname, :phone, :address, :email, :important, :group_id)
 	end
 
 
